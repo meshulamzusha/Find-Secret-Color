@@ -30,6 +30,7 @@ const GridLayout = () => {
               className={"color-box"}
               key={index}
               onClick={() => {
+                setClicks(clicks + 1)
                 const found = b === 1;
               }}
             ></div>
