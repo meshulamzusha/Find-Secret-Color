@@ -1,7 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(10, minmax(40px, 1fr));
-  background-color: rgb(178, 187, 187);
+  background-color: #b2bbbb;
   gap: 5px;
   padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.473) 0px 10px 20px, rgba(5, 5, 5, 0.534) 0px 6px 6px;
@@ -10,4 +14,9 @@
 .color-box {
   background-color: #4d4949;
   height: 40px;
+}
+
+.color-box:hover {
+  background-color: #944d4d;
+  border: solid 2px #b2bbbb;
 }
