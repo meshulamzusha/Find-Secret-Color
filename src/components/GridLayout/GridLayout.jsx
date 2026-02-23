@@ -4,16 +4,14 @@ import "./GridLayout.css";
 const GridLayout = () => {
   const [boxes, setBoxes] = useState([]);
   const [clicks, setClicks] = useState(0);
-  const [secretColor, setSecretColor] = useState(null);
+  const [found, setFound] = useState(false);
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
 
   useEffect(() => {
     const boxes = new Array(100).fill(0);
     const randomIndex = Math.floor(Math.random() * 100);
     boxes[randomIndex] = 1;
     setBoxes(boxes);
-
-    const randomColor = Math.random().toString(16).substring(-6);
-    setSecretColor(randomColor);
   }, []);
 
   return (
@@ -30,8 +28,11 @@ const GridLayout = () => {
               className={"color-box"}
               key={index}
               onClick={() => {
-                setClicks(clicks + 1)
+                setClicks(clicks + 1);
                 const found = b === 1;
+                if (found) {
+                    setFound(true)
+                }
               }}
             ></div>
           );
