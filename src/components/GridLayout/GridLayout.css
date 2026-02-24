@@ -36,8 +36,9 @@
 }
 
 .grid-layout {
-  display: inline-grid;
+  display: grid;
   grid-template-columns: repeat(10, 40px);
+  justify-self: center;
   background-color: #b2bbbb;
   gap: 5px;
   padding: 10px;
@@ -57,6 +58,16 @@
 .color-box:hover {
   background-color: #944d4d;
   transform: scale(1.07);
+}
+
+.overt-box {
+  color: #000000;
+  font-weight: 700;
+  font-size: 25px;
+  background-color: #f3a93b;
+  outline: solid 1px #ffffff;
+  transform: scale(1.1);
+  border-radius: 5px;
 }
 
 .clicks-counter {

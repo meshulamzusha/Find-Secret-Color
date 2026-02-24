@@ -3,6 +3,7 @@ import "./GridLayout.css";
 
 const GridLayout = () => {
   const [boxes, setBoxes] = useState([]);
+  const [boxOvert, setBoxOvert] = useState(101);
   const [clicks, setClicks] = useState(0);
   const [found, setFound] = useState(false);
   const [secretColor, setSecretColor] = useState(null);
@@ -31,21 +32,27 @@ const GridLayout = () => {
       </h1>
       <div className="grid-layout">
         {boxes.map((b, index) => {
+          const isTarget = b === 1;
+          const isClicked = index === boxOvert;
           return (
             <div
-              className={"color-box"}
-              style={{ backgroundColor: (b === 1 && found) ? secretColor : "" }}
+              className={isClicked ? "overt-box" : "color-box"}
+              style={{
+                backgroundColor: isTarget && found ? secretColor : "",
+              }}
               key={index}
               onClick={() => {
-                const isTarget = b === 1;
                 if (isTarget) {
                   setFound(true);
                 }
-                if (!found) {       
+                if (!found) {
+                  setBoxOvert(index);
                   setClicks(clicks + 1);
                 }
               }}
-            ></div>
+            >
+              {index === boxOvert && !isTarget && "X"}
+            </div>
           );
         })}
       </div>
