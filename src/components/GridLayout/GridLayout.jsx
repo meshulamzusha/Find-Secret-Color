@@ -37,10 +37,12 @@ const GridLayout = () => {
               style={{ backgroundColor: (b === 1 && found) ? secretColor : "" }}
               key={index}
               onClick={() => {
-                setClicks(clicks + 1);
-                const found = b === 1;
-                if (found) {
-                    setFound(true)
+                const isTarget = b === 1;
+                if (isTarget) {
+                  setFound(true);
+                }
+                if (!found) {       
+                  setClicks(clicks + 1);
                 }
               }}
             ></div>
