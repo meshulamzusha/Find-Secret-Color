@@ -5,13 +5,16 @@ const GridLayout = () => {
   const [boxes, setBoxes] = useState([]);
   const [clicks, setClicks] = useState(0);
   const [found, setFound] = useState(false);
-  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  const [secretColor, setSecretColor] = useState(null);
 
   useEffect(() => {
     const boxes = new Array(100).fill(0);
     const randomIndex = Math.floor(Math.random() * 100);
     boxes[randomIndex] = 1;
     setBoxes(boxes);
+
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    setSecretColor(randomColor);
   }, []);
 
   return (
