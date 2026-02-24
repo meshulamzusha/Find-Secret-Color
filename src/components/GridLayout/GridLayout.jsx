@@ -48,7 +48,9 @@ const GridLayout = () => {
         })}
       </div>
       <section className="clicks-counter">Clicks: {clicks}</section>
-      <footer>Keep Searching!</footer>
+      <footer>
+        {found ? "Champion, you found the secret color!" : "Keep Searching!"}
+      </footer>
     </>
   );
 };
