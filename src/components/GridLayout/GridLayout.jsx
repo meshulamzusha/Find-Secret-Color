@@ -34,6 +34,7 @@ const GridLayout = () => {
           return (
             <div
               className={"color-box"}
+              style={{ backgroundColor: (b === 1 && found) ? secretColor : "" }}
               key={index}
               onClick={() => {
                 setClicks(clicks + 1);
