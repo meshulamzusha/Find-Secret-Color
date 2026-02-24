@@ -22,7 +22,12 @@ const GridLayout = () => {
       <h1 className="header">
         <p className="header-1">Find the</p>
         <p className="header-2">Secret Color!</p>
-        <div className="secret-color"></div>
+        <div
+          className="secret-color"
+          style={{
+            backgroundColor: secretColor,
+          }}
+        ></div>
       </h1>
       <div className="grid-layout">
         {boxes.map((b, index) => {
